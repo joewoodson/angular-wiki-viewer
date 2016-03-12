@@ -53,19 +53,23 @@ body {
   .header {
     margin-bottom: 30px;
   }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 55, ../../app/styles/main.scss */
-  .jumbotron {
-    border-bottom: 0;
-  }
 }
-/* line 61, ../../app/styles/main.scss */
+/* line 58, ../../app/styles/main.scss */
+input {
+  margin-bottom: 10px;
+}
+
+/* line 62, ../../app/styles/main.scss */
+div.panel-heading {
+  cursor: pointer;
+}
+
+/* line 66, ../../app/styles/main.scss */
 blockquote {
   font-family: "Gentium Book Basic", serif;
   font-size: 1.4em;
 }
-/* line 65, ../../app/styles/main.scss */
+/* line 70, ../../app/styles/main.scss */
 blockquote:before {
   content: "Excerpt: ";
   font-weight: 700;

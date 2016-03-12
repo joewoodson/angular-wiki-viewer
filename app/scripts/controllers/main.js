@@ -28,6 +28,7 @@ angular.module('wikiReaderApp')
 
 			if ($scope.wikiQuery) {
 			    for (var result of data.data.query.search) {
+			    		result.url = 'http://en.wikipedia.org/wiki/' + result.title;
 						$scope.wikiResults.push(result);
 				}
 			}
@@ -36,5 +37,7 @@ angular.module('wikiReaderApp')
 
 		$scope.wikiResults = [];
 	});
-
+  	$scope.closeOthers = function () {
+  		$('.collapse').removeClass('in');
+  	};
   });

@@ -1,17 +1,20 @@
 <div class="container">
   
+  <h2>Wikipedia top ten search</h2>
+
   <!-- Search Box -->
   <input type="text" placeholder="Search Wikipedia!" ng-model="wikiQuery" ng-model-options="{ debounce: 300 }">
 
   <!-- Search Result -->
-  <div id="wiki-entry" ng-repeat="result in wikiResults">
-    <button type="button" data-toggle="collapse" data-target="{{'#' + $index}}" aria-expanded="false" aria-controls="collapseExample" ng-click="closeOthers()">
-    {{result.title}}
-    </button>
-    <div class="collapse" id="{{$index}}">
-      <div class="well">
-        <blockquote ng-bind-html="result.snippet"></blockquote>
-      </div>
+  <div class="panel panel-default" id="wiki-entry" ng-repeat="result in wikiResults">
+    <div class="panel-heading">
+      <h3 class="panel-title" data-toggle="collapse" data-target="{{'#' + $index}}" aria-expanded="false" aria-controls="collapseExample" ng-click="closeOthers()">
+      {{result.title}}
+      </h3>
+    </div>
+    <div class="panel-body collapse" id="{{$index}}">
+      <blockquote ng-bind-html="result.snippet"></blockquote>
+      <a ng-href="{{result.url}}">Read full article</a>
     </div>
   </div>
 
