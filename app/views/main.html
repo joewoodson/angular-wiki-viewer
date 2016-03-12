@@ -3,9 +3,16 @@
   <!-- Search Box -->
   <input type="text" placeholder="Search Wikipedia!" ng-model="wikiQuery" ng-model-options="{ debounce: 300 }">
 
-  <!-- Wiki Article -->
+  <!-- Search Result -->
   <div id="wiki-entry" ng-repeat="result in wikiResults">
-    <h2>{{result.title}}</h2>
+    <button type="button" data-toggle="collapse" data-target="{{'#' + $index}}" aria-expanded="false" aria-controls="collapseExample" ng-click="closeOthers()">
+    {{result.title}}
+    </button>
+    <div class="collapse" id="{{$index}}">
+      <div class="well">
+        <blockquote ng-bind-html="result.snippet"></blockquote>
+      </div>
+    </div>
   </div>
 
 </div>
