@@ -4,10 +4,10 @@
   <input type="text" placeholder="Search Wikipedia!" ng-model="wikiQuery" ng-model-options="{ debounce: 300 }">
 
   <!-- Wiki Article -->
-  <div id="wiki-title">
-    <h2>{{wikiTitle}}</h2>
+  <div id="wiki-entry" ng-repeat="result in wikiResults">
+    <h2>{{result.title}}</h2>
   </div>
-  <div id="wiki-extract" ng-bind-html="wikiExtract"></div>
+
 </div>
 
 
